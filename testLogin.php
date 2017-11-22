@@ -2,7 +2,7 @@
 
 class TestLogin extends PHPUnit_Extensions_Selenium2TestCase {
   public function setUp() {
-    $this->sethost('localhost');
+    $this->sethost('172.16.123.45');
     $this->setPort(4444);
     $this->setBrowser('chrome');
     $this->setBrowserUrl('https://www.google.com');
@@ -50,6 +50,7 @@ class TestLogin extends PHPUnit_Extensions_Selenium2TestCase {
         $data = $this->currentScreenshot();
         file_put_contents($screenFolder . '/' . $filename, $data);
         print_r($filename);
+        exit(0);
       }
     }
   }
